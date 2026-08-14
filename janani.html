@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For My Janani ❤️</title>
+
+<style>
+
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Segoe UI", sans-serif;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #3b1d59,
+            #12051f 60%,
+            #05010a
+        );
+
+    color: white;
+
+    /* FIXED SCROLLING */
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    padding: 30px 0;
+}
+
+
+/* =========================
+   STARS
+========================= */
+
+.star {
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    animation: blink 2s infinite alternate;
+
+    pointer-events: none;
+}
+
+@keyframes blink {
+
+    from {
+        opacity: 0.2;
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+
+}
+
+
+/* =========================
+   MOON
+========================= */
+
+.moon {
+    position: absolute;
+
+    top: 50px;
+    right: 10%;
+
+    width: 100px;
+    height: 100px;
+
+    border-radius: 50%;
+
+    background: #fff4c2;
+
+    box-shadow:
+        0 0 20px #fff4c2,
+        0 0 60px rgba(255,244,194,0.5);
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   MAIN CARD
+========================= */
+
+.card {
+
+    position: relative;
+
+    width: 90%;
+    max-width: 620px;
+
+    margin: 30px 0;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.2);
+
+    backdrop-filter: blur(15px);
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 0 50px rgba(255,0,140,0.2);
+
+    z-index: 5;
+}
+
+
+/* =========================
+   HEART
+========================= */
+
+.heart {
+
+    font-size: 60px;
+
+    animation: beat 1.3s infinite;
+
+}
+
+@keyframes beat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+
+/* =========================
+   HEADING
+========================= */
+
+h1 {
+
+    margin-top: 10px;
+
+    font-size: 38px;
+
+    color: #ff9ccc;
+
+    text-shadow:
+        0 0 15px #ff4fa3;
+
+}
+
+
+/* =========================
+   NAME
+========================= */
+
+.name {
+
+    margin-top: 8px;
+
+    font-size: 30px;
+
+    color: #ffd1e7;
+
+}
+
+
+/* =========================
+   LINE
+========================= */
+
+.line {
+
+    width: 100px;
+    height: 3px;
+
+    background: #ff69aa;
+
+    margin: 20px auto;
+
+    border-radius: 20px;
+
+}
+
+
+/* =========================
+   MESSAGE
+========================= */
+
+.message {
+
+    font-size: 17px;
+
+    line-height: 1.8;
+
+    color: #eeeeee;
+
+}
+
+.tamil {
+
+    color: #ffacd2;
+
+    font-weight: bold;
+
+}
+
+.highlight {
+
+    color: #ff77b7;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   QUOTE
+========================= */
+
+.quote {
+
+    margin-top: 25px;
+
+    padding: 18px;
+
+    background: rgba(255,255,255,0.07);
+
+    border-left: 3px solid #ff65ad;
+
+    border-radius: 10px;
+
+    color: #ffd5e8;
+
+    font-style: italic;
+
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+
+    margin-top: 25px;
+
+    padding: 13px 30px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            45deg,
+            #ff3f91,
+            #9d4edd
+        );
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 0 20px rgba(255,50,150,0.4);
+
+    transition: 0.3s;
+
+}
+
+button:hover {
+
+    transform: scale(1.08);
+
+}
+
+button:active {
+
+    transform: scale(0.95);
+
+}
+
+
+/* =========================
+   SECRET MESSAGE
+========================= */
+
+#secret {
+
+    display: none;
+
+    margin-top: 25px;
+
+    color: #ffafd2;
+
+    font-size: 19px;
+
+    line-height: 1.7;
+
+    animation: show 1s ease;
+
+}
+
+@keyframes show {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================
+   FLOATING HEARTS
+========================= */
+
+.float {
+
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    animation: floating 8s linear infinite;
+
+    pointer-events: none;
+
+    z-index: 2;
+
+}
+
+@keyframes floating {
+
+    0% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+
+    }
+
+    20% {
+
+        opacity: 1;
+
+    }
+
+    100% {
+
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+.f1 {
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.f2 {
+    left: 30%;
+    animation-delay: 3s;
+}
+
+.f3 {
+    left: 50%;
+    animation-delay: 0s;
+}
+
+.f4 {
+    left: 75%;
+    animation-delay: 2s;
+}
+
+.f5 {
+    left: 90%;
+    animation-delay: 4s;
+}
+
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        align-items: flex-start;
+
+        padding: 20px 0;
+
+    }
+
+    .card {
+
+        width: 92%;
+
+        padding: 30px 20px;
+
+        margin: 20px 0;
+
+    }
+
+    h1 {
+
+        font-size: 30px;
+
+    }
+
+    .name {
+
+        font-size: 25px;
+
+    }
+
+    .message {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+    .quote {
+
+        font-size: 14px;
+
+    }
+
+    #secret {
+
+        font-size: 16px;
+
+    }
+
+    .moon {
+
+        width: 70px;
+        height: 70px;
+
+        top: 25px;
+        right: 8%;
+
+    }
+
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+========================= */
+
+@media (max-width: 400px) {
+
+    .card {
+
+        padding: 25px 15px;
+
+    }
+
+    .heart {
+
+        font-size: 50px;
+
+    }
+
+    h1 {
+
+        font-size: 27px;
+
+    }
+
+    .name {
+
+        font-size: 23px;
+
+    }
+
+    button {
+
+        width: 100%;
+
+        font-size: 14px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     STARS
+========================= -->
+
+<div class="star" style="top:10%;left:15%;"></div>
+
+<div class="star" style="top:20%;left:35%;"></div>
+
+<div class="star" style="top:15%;left:60%;"></div>
+
+<div class="star" style="top:30%;left:85%;"></div>
+
+<div class="star" style="top:70%;left:10%;"></div>
+
+<div class="star" style="top:80%;left:80%;"></div>
+
+<div class="star" style="top:60%;left:90%;"></div>
+
+<div class="star" style="top:40%;left:5%;"></div>
+
+
+<!-- =========================
+     MOON
+========================= -->
+
+<div class="moon"></div>
+
+
+<!-- =========================
+     FLOATING HEARTS
+========================= -->
+
+<div class="float f1">❤️</div>
+
+<div class="float f2">💗</div>
+
+<div class="float f3">💕</div>
+
+<div class="float f4">💖</div>
+
+<div class="float f5">❤️</div>
+
+
+<!-- =========================
+     MAIN CARD
+========================= -->
+
+<div class="card">
+
+
+    <!-- HEART -->
+
+    <div class="heart">
+        ❤️
+    </div>
+
+
+    <!-- TITLE -->
+
+    <h1>
+        Missing You...
+    </h1>
+
+
+    <!-- NAME -->
+
+    <div class="name">
+        Janani 🌙
+    </div>
+
+
+    <div class="line"></div>
+
+
+    <!-- =========================
+         MAIN MESSAGE
+    ========================= -->
+
+    <div class="message">
+
+
+        <span class="tamil">
+
+            Nee en kooda illatha ovvoru naalum,
+            konjam oru marii feel aaguthu...
+
+        </span>
+
+
+        <br><br>
+
+
+        I may not be able to see you every day,
+        but
+
+        <span class="highlight">
+            you are always in my thoughts.
+        </span>
+
+
+        <br><br>
+
+
+        <span class="tamil">
+
+            Un kooda pesura few minutes kooda,
+            enakku romba special.
+
+        </span>
+
+
+        <br><br>
+
+
+        Distance namma rendu perayum
+        far away vachirukkalam...
+
+
+        <br>
+
+
+        But it can never make my heart
+
+        <span class="highlight">
+            forget you. ❤️
+        </span>
+
+
+        <br><br>
+
+
+        <span class="tamil">
+
+            Un smile, un voice,
+            un kooda pesina moments ellame
+            romba miss panren.
+
+            nee kovo patum pothuu romba alaga irupaa
+            ana enna chinna bayotha
+            adichutuviyonuu 🫣
+
+        </span>
+
+
+    </div>
+
+
+    <!-- =========================
+         QUOTE
+    ========================= -->
+
+    <div class="quote">
+
+        "Miles apart, but hearts always connected." 💕
+
+
+        <br><br>
+
+
+        <span class="tamil">
+
+            Evlo distance irundhalum,
+            en heart-la nee always close dhaan.
+
+        </span>
+
+    </div>
+
+
+    <!-- =========================
+         SECRET BUTTON
+    ========================= -->
+
+    <button onclick="showMessage()">
+
+        💌 Unakku Oru Secret Message
+
+    </button>
+
+
+    <!-- =========================
+         SECRET MESSAGE
+    ========================= -->
+
+    <div id="secret">
+
+
+        ❤️ Enathazhagi ❤️
+
+
+        <br><br>
+
+
+        <span class="tamil">
+
+            Unna daily paaka mudiyala...
+            un kooda daily iruka mudiyala...
+
+        </span>
+
+
+        <br><br>
+
+
+        But still...
+
+
+        <br>
+
+
+        <b>
+            You are a beautiful part of my every day. 💗
+        </b>
+
+
+        <br><br>
+
+
+        <span class="tamil">
+
+            Seekiram namma meet pannura
+            andha beautiful day-kaaga wait panren. 🌙
+
+        </span>
+
+
+        <br><br>
+
+
+        <b>
+
+            I MISS YOU SO MUCH ❤️
+            <br>
+
+            I Love you so Much 💖
+
+            <br>
+
+            Aprm unnaa romba romba phutikum 😉
+
+        </b>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script>
+
+function showMessage() {
+
+    const message =
+        document.getElementById("secret");
+
+    if (message.style.display === "block") {
+
+        message.style.display = "none";
+
+    } else {
+
+        message.style.display = "block";
+
+        // Automatically scroll to secret message
+        setTimeout(function() {
+
+            message.scrollIntoView({
+                behavior: "smooth",
+                block: "center"
+            });
+
+        }, 100);
+
+    }
+
+}
+
+</script>
+
+
+</body>
+</html>
